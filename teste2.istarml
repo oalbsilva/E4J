@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<istarml version="1.0">
+    <diagram id="" name="Exported from E4J">
+        <actor id="2" name="Funcionario" type="actor"/>
+        <actor id="7" name="Sistema" type="actor">
+            <boundary>
+                <ielement id="29" name="Via tela" type="task">
+                    <ielementlink type="meansend">
+                        <ielement id="22" name="Mostrar produtos" type="goal"/>
+                    </ielementlink>
+                </ielement>
+                <ielement id="27" name="Via browser" type="task">
+                    <ielementlink type="meansend">
+                        <ielement id="23" name="Buscar produtos" type="goal"/>
+                    </ielementlink>
+                </ielement>
+                <ielement id="28" name="Via impressão" type="task">
+                    <ielementlink type="meansend">
+                        <ielement id="22" name="Mostrar produtos" type="goal"/>
+                    </ielementlink>
+                </ielement>
+                <ielement id="26" name="Via pesquisa" type="task">
+                    <ielementlink type="meansend">
+                        <ielement id="23" name="Buscar produtos" type="goal"/>
+                    </ielementlink>
+                </ielement>
+                <ielement id="11" name="Efetuar venda" type="task">
+                    <ielementlink type="decomposition">
+                        <ielement id="10" name="Consultar produtos" type="task">
+                            <ielementlink type="decomposition">
+                                <ielement id="22" name="Mostrar produtos" type="goal"/>
+                                <ielement id="23" name="Buscar produtos" type="goal"/>
+                            </ielementlink>
+                        </ielement>
+                        <ielement id="19" name="Selecionar produto" type="task"/>
+                        <ielement id="12" name="Emitir nota fiscal" type="task"/>
+                        <ielement id="18" name="Dar baixa no produto" type="task"/>
+                    </ielementlink>
+                </ielement>
+            </boundary>
+        </actor>
+        <ielement id="4" name="Consultar produtos" type="goal">
+            <dependency>
+                <depender aref="2"/>
+                <dependee iref="10"/>
+            </dependency>
+        </ielement>
+        <ielement id="5" name="Efetuar venda" type="goal">
+            <dependency>
+                <depender aref="2"/>
+                <dependee iref="11"/>
+            </dependency>
+        </ielement>
+        <ielement id="3" name="Rapidez" type="softgoal">
+            <dependency>
+                <depender aref="2"/>
+                <dependee aref="7"/>
+            </dependency>
+        </ielement>
+        <ielement id="6" name="Emitir nota fiscal" type="goal">
+            <dependency>
+                <depender aref="2"/>
+                <dependee iref="12"/>
+            </dependency>
+        </ielement>
+    </diagram>
+</istarml>

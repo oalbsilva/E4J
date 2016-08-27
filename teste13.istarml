@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<istarml version="1.0">
+<diagram id="" name="Exported from E4J">
+	<actor id="19" name="Usuario" type="actor"/>
+	<actor id="20" name="E4J Use Cases" type="actor">
+		<boundary>			
+			<ielement id="46" name="Carregar diagrama" type="task">
+				<ielementlink type="decomposition">
+					<ielement id="50" name="Carregar  arquivo mxe" type="task"/>
+					<ielement id="45" name="Modificar Diagrama" type="task">
+						<ielementlink type="decomposition">
+							<ielement id="53" name="Salvar diagrama" type="goal"/>
+							<ielement id="52" name="atualizar o grafo" type="task"/>
+							<ielement id="51" name="alterar o modelo" type="task"/>
+						</ielementlink>
+					</ielement>
+				</ielementlink>
+			</ielement>
+			<ielement id="56" name="Exportar imagem do diagrama" type="task">
+				<ielementlink type="meansend">
+					<ielement id="53" name="Salvar diagrama" type="goal"/>
+				</ielementlink>
+			</ielement>
+		</boundary>
+	</actor>
+	<actor id="40" name="JGOOSE" type="actor"/>
+	<ielement id="27" name="Modificar Diagrama" type="goal">
+		<dependency>
+			<depender aref="19"/>
+			<dependee iref="45"/>
+		</dependency>
+	</ielement>
+	<ielement id="26" name="Salvar Diagrama" type="goal">
+		<dependency>
+			<depender aref="19"/>
+			<dependee iref="53"/>
+		</dependency>
+	</ielement>
+	<ielement id="41" name="Gerenciar diagramas" type="goal">
+		<dependency>
+			<depender aref="40"/>
+			<dependee aref="20"/>
+		</dependency>
+	</ielement>
+	<ielement id="30" name="Exportar para formato de img" type="goal">
+		<dependency>
+			<depender aref="19"/>
+			<dependee iref="56"/>
+		</dependency>
+	</ielement>
+	<ielement id="22" name="Boa Usuabilidade" type="softgoal">
+		<dependency>
+			<depender aref="19"/>
+			<dependee aref="20"/>
+		</dependency>
+	</ielement>
+	<ielement id="25" name="Criar Diagrama" type="goal">
+		<dependency>
+			<depender aref="19"/>
+			<dependee iref="44"/>
+		</dependency>
+	</ielement>
+	<ielement id="28" name="Carregar Diagrama" type="goal">
+		<dependency>
+			<depender aref="19"/>
+			<dependee iref="46"/>	
+		</dependency>
+	</ielement>
+	<ielement id="29" name="Imprimir Diagrama" type="goal">
+		<dependency>
+			<depender aref="19"/>
+			<dependee iref="47"/>
+		</dependency>
+	</ielement>
+	<ielement id="23" name="Facil de Aprender" type="softgoal">
+		<dependency>
+			<depender aref="19"/>
+			<dependee aref="20"/>
+		</dependency>
+	</ielement>
+	<ielement id="24" name="Boa Estabilidade" type="softgoal">
+		<dependency>
+			<depender aref="19"/>
+			<dependee aref="20"/>
+		</dependency>
+	</ielement>
+</diagram>
+</istarml>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
